@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pragprog Books Online Store</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+</head>
+<body class="<%= controller.controller_name %>">
+<div id="banner">
+  <%= image_tag("logo.png") %>
+  <%= @page_title || "Pragmatic Bookshelf" %>
+  <!-- -->
+</div>
+<div id="columns">
+  <div id="side">
+    <ul>
+      <li><a href="http://www....">Home</a></li>
+      <li><a href="http://www..../faq">Questions</a></li>
+      <li><a href="http://www..../news">News</a></li>
+      <li><a href="http://www..../contact">Contact</a></li>
+      <br />
+      <li style="color: #7CFC00"><p>"Current Date & Time: "</p></li>
+      <li id="date" style="color: #7CFC00">
+       <script>document.getElementById("date").innerHTML = Date();</script>
+      </li>
+      <br />
+      <li><p style="color: #00CC00">You were last logged in at: </p></li>
+      <li>
+        <p><a href="/store/last">Last Visit Info</a></p>
+      </li>
+    </ul>
+  </div>
+  <div id="main">
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>
